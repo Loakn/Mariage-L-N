@@ -2,25 +2,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const card = document.getElementById('card');
     const henneCard = document.getElementById('henne-card');
     const downloadButton = document.getElementById('download-button');
+    const cardContainer = document.querySelector('.card-container');
     let step = 1;
 
-    // Premier clic : retourne la carte
-    card.addEventListener('click', function() {
+    // Premier clic : retourne la carte (recto -> verso)
+    cardContainer.addEventListener('click', function() {
         if (step === 1) {
-            // Animation pour retourner la carte
-            card.style.transform = 'rotateY(180deg)';
+            cardContainer.style.transform = 'rotateY(180deg)'; // Effet de retournement 3D
             setTimeout(() => {
-                card.src = 'card_verso.png'; // Affiche le verso
-                card.style.transform = 'rotateY(0deg)'; // Revenir à 0 degré
-            }, 500); // Délai pour que l'animation se fasse
+                card.src = 'card_verso.png'; // Change l'image pour afficher le verso
+                cardContainer.style.transform = 'rotateY(0deg)'; // Remet à 0 une fois l'image changée
+            }, 500); // Délai pour l'effet de retournement
             step++;
         } else if (step === 2) {
-            // Deuxième clic : afficher la carte henné et cacher la carte principale
-            card.style.display = 'none'; // Cache la carte
-            henneCard.style.display = 'block'; // Affiche la carte Henné
+            // Deuxième clic : retournement vers la carte henné
+            cardContainer.style.transform = 'rotateY(180deg)'; // Effet de retournement 3D
+            setTimeout(() => {
+                card.style.display = 'none'; // Cache la carte verso
+                henneCard.style.display = 'block'; // Affiche la carte Henné
+                cardContainer.style.transform = 'rotateY(0deg)'; // Revenir à 0 une fois la carte Henné affichée
+            }, 500);
             step++;
         } else if (step === 3) {
-            // Troisième clic : faire apparaître le bouton de téléchargement
+            // Troisième clic : afficher le bouton de téléchargement
             downloadButton.style.display = 'block'; // Affiche le bouton de téléchargement
             step++;
         }
