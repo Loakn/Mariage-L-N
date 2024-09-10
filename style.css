@@ -6,45 +6,51 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
 .container {
     text-align: center;
+    position: relative;
+    width: 300px;
+    height: 400px;
 }
 
 .envelope {
-    position: relative;
-    width: 300px;
-    margin-bottom: 20px;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
 }
 
 .envelope-img {
     width: 100%;
+    height: auto;
 }
 
 .card {
     position: absolute;
-    top: 50px;
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 280px;
-    height: 200px;
-    display: none; /* Carte cachée au début */
-}
-
-.card-img {
     width: 100%;
+    height: auto;
+    display: none; /* Cachée au début */
 }
 
 .henne-card {
     position: absolute;
-    top: 300px;
+    top: 100px; /* Ajuste la position de la carte henné pour la faire apparaître plus bas */
     left: 50%;
     transform: translateX(-50%);
-    width: 280px;
-    display: none; /* Carte pour le henné cachée au début */
+    width: 100%;
+    height: auto;
+    display: none; /* Cachée au début */
 }
 
-.henne-img {
+img {
     width: 100%;
+    height: auto;
+    max-width: 100%; /* Pour empêcher les images de déborder */
 }
