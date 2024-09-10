@@ -1,11 +1,13 @@
 /* Style de base pour centrer la carte */
 body {
     margin: 0;
-    height: 100vh;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh; /* Assure que la hauteur prend tout l'écran */
     background-color: #f0f0f0;
+    overflow: hidden; /* Empêche les barres de défilement */
 }
 
 /* Conteneur de la carte pour centrer l'image */
@@ -13,13 +15,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /* Image de la carte */
 .card-img {
-    max-width: 100%; /* Empêche l'image de dépasser la largeur de l'écran */
-    max-height: 100%; /* Empêche l'image de dépasser la hauteur de l'écran */
-    object-fit: contain; /* Ajuste l'image à l'intérieur du conteneur sans la déformer */
+    width: auto; /* Ajuste la largeur automatiquement en fonction de la hauteur */
+    height: 100vh; /* La hauteur prend tout l'écran */
+    object-fit: contain; /* L'image reste à l'intérieur des limites sans être coupée */
 }
