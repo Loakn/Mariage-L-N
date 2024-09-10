@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const cardImage = document.getElementById('card-image');
     const henneCard = document.getElementById('henne-card');
     const downloadButton = document.getElementById('download-button');
-    let step = 1;
+    let isCardFlipped = false; // Indique si la carte est retournée ou non
+    let step = 1; // Pour suivre l'étape actuelle
 
     // Musique automatique (autoplay est activé dans le HTML)
 
@@ -12,13 +13,13 @@ document.addEventListener('DOMContentLoaded', function() {
             // Premier clic : retourner la carte pour afficher le verso
             card.style.transform = 'rotateY(180deg)';
             setTimeout(() => {
-                cardImage.src = 'card_verso.png'; // Affiche le verso
-                card.style.transform = 'rotateY(0deg)';
-            }, 1000); // Délai pour l'animation
+                cardImage.src = 'card_verso.png'; // Affiche le verso après le retournement
+                card.style.transform = 'rotateY(0deg)'; // Revenir à 0 degré
+            }, 500); // Délai pour que le retournement se fasse de manière naturelle
             step++;
         } else if (step === 2) {
-            // Deuxième clic : afficher la carte henné
-            card.style.display = 'none'; // Cache la première carte
+            // Deuxième clic : faire réapparaître le recto et afficher la carte henné
+            card.style.display = 'none'; // Cache la carte recto/verso
             henneCard.style.display = 'block'; // Affiche la carte henné
             step++;
         } else if (step === 3) {
@@ -35,15 +36,15 @@ document.addEventListener('DOMContentLoaded', function() {
         const pdf = new jsPDF(); // Créer un nouveau PDF
 
         // Ajouter la première image (recto)
-        pdf.addImage('card_recto.png', 'PNG', 10, 10, 180, 240);
+        pdf.addImage('card_recto.png', 'PNG', 10, 10, 180, 180);
 
         // Ajouter la deuxième image (verso)
         pdf.addPage();
-        pdf.addImage('card_verso.png', 'PNG', 10, 10, 180, 240);
+        pdf.addImage('card_verso.png', 'PNG', 10, 10, 180, 180);
 
         // Ajouter la carte henné
         pdf.addPage();
-        pdf.addImage('henne.png', 'PNG', 10, 10, 180, 240);
+        pdf.addImage('henne.png', 'PNG', 10, 10, 180, 180);
 
         // Téléchargement du PDF
         pdf.save('invitation.pdf');
