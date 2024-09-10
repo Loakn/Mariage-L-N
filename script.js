@@ -1,33 +1,51 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const envelope = document.getElementById('envelope');
     const card = document.getElementById('card');
     const cardImage = document.getElementById('card-image');
     const henneCard = document.getElementById('henne-card');
-    const music = document.getElementById('background-music');
+    const downloadButton = document.getElementById('download-button');
+    let step = 1;
 
-    let cardFace = 'recto'; // Indique si on est sur le recto ou le verso
-    let step = 1; // Contrôle les étapes de l'animation
+    // Musique automatique (autoplay est activé dans le HTML)
 
-    // Démarre la musique dès que la page est chargée
-    music.play();
-
-    // Clique sur l'enveloppe pour commencer l'animation
-    envelope.addEventListener('click', function() {
+    card.addEventListener('click', function() {
         if (step === 1) {
-            // Étape 1 : Faire sortir la carte (recto visible)
-            card.style.display = 'block'; // Affiche la carte
-            step++; // Passe à l'étape suivante
-        } else if (step === 2) {
-            // Étape 2 : Retourner la carte (verso visible)
-            if (cardFace === 'recto') {
+            // Premier clic : retourner la carte pour afficher le verso
+            card.style.transform = 'rotateY(180deg)';
+            setTimeout(() => {
                 cardImage.src = 'card_verso.png'; // Affiche le verso
-                cardFace = 'verso';
-            }
-            step++; // Passe à l'étape suivante
+                card.style.transform = 'rotateY(0deg)';
+            }, 1000); // Délai pour l'animation
+            step++;
+        } else if (step === 2) {
+            // Deuxième clic : afficher la carte henné
+            card.style.display = 'none'; // Cache la première carte
+            henneCard.style.display = 'block'; // Affiche la carte henné
+            step++;
         } else if (step === 3) {
-            // Étape 3 : Afficher la carte du henné
-            henneCard.style.display = 'block'; // Affiche la carte avec les indications du henné
-            step++; // Fin du processus
+            // Troisième clic : faire apparaître le bouton de téléchargement
+            downloadButton.style.display = 'block'; // Affiche le bouton de téléchargement
+            step++;
         }
+    });
+
+    // Fonction pour générer et télécharger un PDF avec les trois images
+    downloadButton.addEventListener('click', function() {
+        const { jsPDF } = window.jspdf;
+
+        const pdf = new jsPDF(); // Créer un nouveau PDF
+
+        // Ajouter la première image (recto)
+        pdf.addImage('card_recto.png', 'PNG', 10, 10, 180, 240);
+
+        // Ajouter la deuxième image (verso)
+        pdf.addPage();
+        pdf.addImage('card_verso.png', 'PNG', 10, 10, 180, 240);
+
+        // Ajouter la carte henné
+        pdf.addPage();
+        pdf.addImage('henne.png', 'PNG', 10, 10, 180, 240);
+
+        // Téléchargement du PDF
+        pdf.save('invitation.pdf');
     });
 });
