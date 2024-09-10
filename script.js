@@ -1,4 +1,3 @@
-// Dès que la page est chargée
 document.addEventListener('DOMContentLoaded', function() {
     const envelope = document.getElementById('envelope');
     const card = document.getElementById('card');
@@ -21,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (step === 2) {
             // Étape 2 : Retourner la carte (verso visible)
             if (cardFace === 'recto') {
-                cardImage.src = 'card_verso.jpg'; // Affiche le verso
+                cardImage.src = 'card_verso.png'; // Affiche le verso
                 cardFace = 'verso';
             }
             step++; // Passe à l'étape suivante
