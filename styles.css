@@ -1,0 +1,29 @@
+/* Centrage et taille générale de la page */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Couleur de fond */
+}
+
+/* Conteneur de la carte */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw; /* Prend toute la largeur de la fenêtre */
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    overflow: hidden; /* Empêche tout débordement */
+}
+
+/* Image de la carte */
+.card-img {
+    max-width: 100%; /* Image prend jusqu'à 100% de la largeur de la fenêtre */
+    max-height: 100%; /* Image prend jusqu'à 100% de la hauteur de la fenêtre */
+    object-fit: contain; /* Garde les proportions de l'image */
+    display: block;
+}
