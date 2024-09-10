@@ -11,16 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
             cardContainer.style.transform = 'rotateY(180deg)'; // Effet de retournement 3D
             setTimeout(() => {
                 card.src = 'card_verso.png'; // Change l'image pour afficher le verso
-                cardContainer.style.transform = 'rotateY(0deg)'; // Remet à 0 une fois l'image changée
+                cardContainer.style.transform = 'rotateY(0deg)'; // Revenir à 0 après l'animation
             }, 500); // Délai pour l'effet de retournement
             step++;
         } else if (step === 2) {
-            // Deuxième clic : retournement vers la carte henné
-            cardContainer.style.transform = 'rotateY(180deg)'; // Effet de retournement 3D
+            // Deuxième clic : retour pour la carte Henné
+            cardContainer.style.transform = 'rotateY(180deg)'; // Effet de retournement
             setTimeout(() => {
                 card.style.display = 'none'; // Cache la carte verso
                 henneCard.style.display = 'block'; // Affiche la carte Henné
-                cardContainer.style.transform = 'rotateY(0deg)'; // Revenir à 0 une fois la carte Henné affichée
+                cardContainer.style.transform = 'rotateY(0deg)'; // Revenir à 0 après l'animation
             }, 500);
             step++;
         } else if (step === 3) {
@@ -35,9 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const { jsPDF } = window.jspdf;
 
         const pdf = new jsPDF({
-            orientation: 'portrait', // Orientation de l'image
+            orientation: 'portrait', // Orientation du PDF
             unit: 'px', // Unité en pixels
-            format: [1772, 1772] // Dimensions en pixels, conserve celles de l'image
+            format: [1772, 1772] // Dimensions des images conservées
         });
 
         // Ajouter la première image (recto)
