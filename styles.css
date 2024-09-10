@@ -50,18 +50,17 @@ html, body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Effet d'ombre pour un effet plus réaliste */
 }
 
-/* Bouton de téléchargement */
+/* Image de téléchargement */
 #download-button {
     position: absolute;
     bottom: 20px;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    cursor: pointer;
+    padding: 10px;
     display: none; /* Caché par défaut */
+    cursor: pointer;
+    width: 100px;
+    height: auto;
 }
 
 #download-button:hover {
-    background-color: #2980b9;
+    opacity: 0.8; /* Ajout d'un léger effet au survol */
 }
