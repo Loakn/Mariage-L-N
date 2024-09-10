@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     const card = document.getElementById('card');
-    const henneCard = document.getElementById('henne-card');
     const downloadButton = document.getElementById('download-button');
     const cardContainer = document.querySelector('.card-container');
     let step = 1;
@@ -15,16 +14,17 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500); // Délai pour l'effet de retournement
             step++;
         } else if (step === 2) {
-            // Deuxième clic : retour pour la carte Henné
+            // Deuxième clic : retourne pour afficher la carte Henné
             cardContainer.style.transform = 'rotateY(180deg)'; // Effet de retournement
             setTimeout(() => {
                 card.src = 'henne.png'; // Change l'image pour afficher la carte henné
                 cardContainer.style.transform = 'rotateY(0deg)'; // Revenir à 0 après l'animation
-            }, 500); // Délai pour l'effet de retournement
+            }, 500);
             step++;
         } else if (step === 3) {
-            // Troisième clic : afficher le bouton de téléchargement
-            downloadButton.style.display = 'block'; // Affiche le bouton de téléchargement
+            // Troisième clic : faire disparaître la carte Henné et afficher l'image de téléchargement
+            card.style.display = 'none'; // Cache la carte Henné
+            downloadButton.style.display = 'block'; // Affiche l'image de téléchargement
             step++;
         }
     });
