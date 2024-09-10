@@ -8,21 +8,21 @@
 </head>
 <body>
     <div class="container">
-        <!-- Enveloppe et carte -->
-        <div class="envelope" id="envelope">
-            <img src="enveloppe.jpg" alt="Enveloppe" class="envelope-img">
-            <div class="card" id="card">
-                <img src="card_recto.png" alt="Recto de la carte" class="card-img" id="card-image">
-            </div>
+        <!-- Carte d'invitation (recto puis verso) -->
+        <div class="card" id="card">
+            <img src="card_recto.png" alt="Recto de la carte" class="card-img" id="card-image">
         </div>
-        
-        <!-- Carte supplémentaire pour le henné -->
+
+        <!-- Carte supplémentaire pour le henné (cachée au début) -->
         <div class="henne-card" id="henne-card">
             <img src="henne.png" alt="Indications du henné" class="henne-img">
         </div>
-        
+
+        <!-- Bouton pour télécharger le PDF (caché au début) -->
+        <button id="download-button" style="display: none;">Télécharger l'invitation</button>
+
         <!-- Musique -->
-        <audio id="background-music" loop>
+        <audio id="background-music" autoplay loop>
             <source src="musique.mp3" type="audio/mpeg">
         </audio>
     </div>
