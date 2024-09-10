@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation Interactive</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers le fichier CSS -->
+</head>
+<body>
+    <div class="container">
+        <!-- Enveloppe et carte -->
+        <div class="envelope" id="envelope">
+            <img src="enveloppe.jpg" alt="Enveloppe" class="envelope-img">
+            <div class="card" id="card">
+                <img src="card_recto.png" alt="Recto de la carte" class="card-img" id="card-image">
+            </div>
+        </div>
+        
+        <!-- Carte supplémentaire pour le henné -->
+        <div class="henne-card" id="henne-card">
+            <img src="henne.png" alt="Indications du henné" class="henne-img">
+        </div>
+        
+        <!-- Musique -->
+        <audio id="background-music" loop>
+            <source src="musique.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <script src="script.js"></script> <!-- Lien vers le fichier JavaScript -->
+</body>
+</html>
