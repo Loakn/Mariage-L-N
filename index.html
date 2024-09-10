@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carte recto</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Vérifie que le fichier est bien nommé -->
+    <title>Invitation Interactive</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- Pour le PDF -->
 </head>
 <body>
     <div class="card-container">
-        <img src="card_recto.png" alt="Carte recto" class="card-img">
+        <img src="card_recto.png" alt="Carte recto" class="card-img" id="card">
     </div>
+
+    <div class="henne-container" id="henne-card" style="display: none;">
+        <img src="henne.png" alt="Carte henné" class="henne-img">
+    </div>
+
+    <button id="download-button" style="display: none;">Télécharger l'invitation</button>
+
+    <script src="script.js"></script>
 </body>
 </html>
