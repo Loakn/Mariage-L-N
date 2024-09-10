@@ -3,31 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitation Interactive</title>
+    <title>Carte recto</title>
     <link rel="stylesheet" href="styles.css"> <!-- Lien vers le fichier CSS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- jsPDF pour générer le PDF -->
 </head>
 <body>
-    <div class="container">
-        <!-- Carte d'invitation (recto puis verso) -->
-        <div class="card" id="card">
-            <img src="card_recto.png" alt="Recto de la carte" class="card-img" id="card-image">
-        </div>
-
-        <!-- Carte supplémentaire pour le henné (cachée au début) -->
-        <div class="henne-card" id="henne-card">
-            <img src="henne.png" alt="Indications du henné" class="henne-img">
-        </div>
-
-        <!-- Bouton pour télécharger le PDF (caché au début) -->
-        <button id="download-button" style="display: none;">Télécharger l'invitation</button>
-
-        <!-- Musique -->
-        <audio id="background-music" autoplay loop>
-            <source src="musique.mp3" type="audio/mpeg">
-        </audio>
+    <div class="card-container">
+        <img src="card_recto.png" alt="Carte recto" class="card-img">
     </div>
-
-    <script src="script.js"></script> <!-- Lien vers le fichier JavaScript -->
 </body>
 </html>
