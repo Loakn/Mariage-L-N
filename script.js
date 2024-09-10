@@ -18,10 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Deuxième clic : retour pour la carte Henné
             cardContainer.style.transform = 'rotateY(180deg)'; // Effet de retournement
             setTimeout(() => {
-                card.style.display = 'none'; // Cache la carte verso
-                henneCard.style.display = 'block'; // Affiche la carte Henné
+                card.src = 'henne.png'; // Change l'image pour afficher la carte henné
                 cardContainer.style.transform = 'rotateY(0deg)'; // Revenir à 0 après l'animation
-            }, 500);
+            }, 500); // Délai pour l'effet de retournement
             step++;
         } else if (step === 3) {
             // Troisième clic : afficher le bouton de téléchargement
