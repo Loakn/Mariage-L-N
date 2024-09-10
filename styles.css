@@ -8,7 +8,7 @@ html, body {
     align-items: center;
     background-color: #f0f0f0;
     perspective: 1000px; /* Perspective pour l'effet 3D */
-    overflow: hidden; /* Empêche les barres de défilement */
+    overflow: hidden;
 }
 
 /* Conteneur pour le retournement 3D */
@@ -34,14 +34,20 @@ html, body {
 /* Carte Henné */
 .henne-container {
     position: absolute;
-    width: 350px;
-    height: 350px;
+    width: 100%; /* Utilise 100% de la largeur disponible */
+    height: 100%; /* Utilise 100% de la hauteur disponible */
     top: 0;
     left: 0;
-    display: none; /* Cachée par défaut */
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Flexbox pour centrer l'image */
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center; /* Centrer verticalement */
     transition: transform 1s; /* Effet de retournement */
+}
+
+.henne-img {
+    max-width: 100%; /* Limite la largeur pour que l'image ne déborde pas */
+    max-height: 100%; /* Limite la hauteur pour que l'image ne déborde pas */
+    object-fit: contain; /* Garde les proportions de l'image */
 }
 
 /* Bouton de téléchargement */
