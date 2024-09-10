@@ -7,28 +7,28 @@ html, body {
     justify-content: center;
     align-items: center;
     background-color: #f0f0f0;
-    perspective: 1000px; /* Ajout de perspective pour l'effet 3D */
-    overflow: hidden; /* Empêche tout débordement */
+    perspective: 1000px; /* Perspective pour l'effet 3D */
+    overflow: hidden; /* Empêche les barres de défilement */
 }
 
-/* Conteneur de la carte */
+/* Conteneur pour le retournement 3D */
 .card-container {
     position: relative;
     width: 350px; /* Taille de la carte */
     height: 350px;
-    transform-style: preserve-3d; /* Permet l'effet 3D */
-    transition: transform 1s; /* Animation du retournement */
+    transform-style: preserve-3d; /* Permet de conserver l'effet 3D */
+    transition: transform 1s; /* Durée de l'animation de retournement */
 }
 
 /* Image de la carte recto et verso */
 .card-img {
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Empêche l'image du recto d'apparaître en miroir */
+    backface-visibility: hidden; /* Empêche le texte de se retourner en miroir */
     position: absolute;
     top: 0;
     left: 0;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Effet d'ombre pour un rendu réaliste */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Effet d'ombre pour un effet plus réaliste */
 }
 
 /* Carte Henné */
@@ -38,10 +38,10 @@ html, body {
     height: 350px;
     top: 0;
     left: 0;
-    display: none;
+    display: none; /* Cachée par défaut */
     justify-content: center;
     align-items: center;
-    transition: transform 1s; /* Animation de retournement */
+    transition: transform 1s; /* Effet de retournement */
 }
 
 /* Bouton de téléchargement */
@@ -53,7 +53,7 @@ html, body {
     color: white;
     border: none;
     cursor: pointer;
-    display: none;
+    display: none; /* Caché par défaut */
 }
 
 #download-button:hover {
