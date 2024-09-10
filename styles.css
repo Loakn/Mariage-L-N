@@ -31,34 +31,16 @@ html, body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Effet d'ombre pour un effet plus réaliste */
 }
 
-/* Carte Henné */
-.henne-container {
-    position: relative;
-    width: 350px; /* Taille de la carte */
-    height: 350px;
-    transform-style: preserve-3d; /* Permet de conserver l'effet 3D */
-    transition: transform 1s; /* Durée de l'animation de retournement */
-}
-
-.henne-img {
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden; /* Empêche le texte de se retourner en miroir */
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Effet d'ombre pour un effet plus réaliste */
-}
-
 /* Image de téléchargement */
 #download-button {
     position: absolute;
-    bottom: 20px;
-    padding: 10px;
+    top: 50%; /* Centré verticalement */
+    left: 50%; /* Centré horizontalement */
+    transform: translate(-50%, -50%); /* Correction pour parfaitement centrer l'image */
+    width: 50%; /* L'image occupe 50% de la largeur de la page */
+    height: auto; /* Garde les proportions de l'image */
     display: none; /* Caché par défaut */
     cursor: pointer;
-    width: 100px;
-    height: auto;
 }
 
 #download-button:hover {
