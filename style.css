@@ -1,3 +1,4 @@
+/* Style général */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -6,16 +7,18 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
 .container {
     text-align: center;
     position: relative;
-    width: 300px; /* Largeur de la carte */
-    height: 450px; /* Hauteur de la carte */
-    perspective: 1000px; /* Perspective pour l'effet de retournement */
+    width: 300px; /* Largeur fixée pour mieux contrôler les images */
+    height: 300px; /* Hauteur pour les cartes */
+    perspective: 1000px; /* Pour un effet 3D plus naturel */
 }
 
+/* Carte d'invitation */
 .card {
     width: 100%;
     height: 100%;
@@ -23,22 +26,23 @@ body {
     top: 0;
     left: 0;
     transform-style: preserve-3d;
-    transition: transform 1s; /* Animation du retournement */
+    transition: transform 1s ease-in-out; /* Effet de retournement plus fluide */
 }
 
 .card-img {
     width: 100%;
     height: 100%;
-    backface-visibility: hidden; /* Masquer le verso lors du retournement */
+    backface-visibility: hidden; /* Cache l'autre côté pendant le retournement */
 }
 
+/* Pour cacher les cartes du début */
 .henne-card {
+    display: none;
+    position: absolute;
     width: 100%;
     height: 100%;
-    position: absolute;
     top: 0;
     left: 0;
-    display: none; /* Cachée au début */
 }
 
 #download-button {
@@ -48,10 +52,9 @@ body {
     color: white;
     border: none;
     cursor: pointer;
-    display: none; /* Caché au début */
+    display: none;
 }
 
 #download-button:hover {
     background-color: #2980b9;
 }
-
