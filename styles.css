@@ -7,25 +7,44 @@ html, body {
     justify-content: center;
     align-items: center;
     background-color: #f0f0f0;
+    perspective: 1000px; /* Ajout de perspective pour l'effet 3D */
+    overflow: hidden; /* Empêche tout débordement */
 }
 
 /* Conteneur de la carte */
-.card-container, .henne-container {
-    display: flex;
+.card-container {
+    position: relative;
+    width: 350px; /* Taille de la carte */
+    height: 350px;
+    transform-style: preserve-3d; /* Permet l'effet 3D */
+    transition: transform 1s; /* Animation du retournement */
+}
+
+/* Image de la carte recto et verso */
+.card-img {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Empêche l'image du recto d'apparaître en miroir */
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Effet d'ombre pour un rendu réaliste */
+}
+
+/* Carte Henné */
+.henne-container {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: 0;
+    left: 0;
+    display: none;
     justify-content: center;
     align-items: center;
-    max-width: 100vw;
-    max-height: 100vh;
-    overflow: hidden;
+    transition: transform 1s; /* Animation de retournement */
 }
 
-/* Image de la carte */
-.card-img, .henne-img {
-    max-width: 100%; /* Empêche l'image de dépasser la largeur de l'écran */
-    max-height: 100%; /* Empêche l'image de dépasser la hauteur de l'écran */
-    object-fit: contain; /* Maintient les proportions de l'image */
-}
-
+/* Bouton de téléchargement */
 #download-button {
     position: absolute;
     bottom: 20px;
@@ -34,7 +53,7 @@ html, body {
     color: white;
     border: none;
     cursor: pointer;
-    display: none; /* Caché au début */
+    display: none;
 }
 
 #download-button:hover {
