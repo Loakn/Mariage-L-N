@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.envelope-img {
+    width: 100%;
+}
+
+.card {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    height: 200px;
+    display: none; /* Carte cachée au début */
+}
+
+.card-img {
+    width: 100%;
+}
+
+.henne-card {
+    position: absolute;
+    top: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 280px;
+    display: none; /* Carte pour le henné cachée au début */
+}
+
+.henne-img {
+    width: 100%;
+}
