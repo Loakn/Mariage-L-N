@@ -4,67 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitation Interactive</title>
-    <style>
-        /* Style pour la vidéo de fond */
-        video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
-            z-index: -1; /* Place la vidéo derrière les autres éléments */
-        }
-
-        /* Conteneur général pour centrer la carte */
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #fddde6; /* Si jamais la vidéo ne charge pas */
-        }
-
-        /* Conteneur pour la carte */
-        .card-container {
-            position: relative;
-            z-index: 1;
-            width: 350px; /* Taille de la carte */
-            height: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-            transition: transform 1s ease;
-            transform-style: preserve-3d;
-            max-width: 90vw;
-            max-height: 90vh;
-        }
-
-        /* Style pour l'image de la carte */
-        .card-img {
-            width: 100%;
-            height: auto;
-            backface-visibility: hidden;
-        }
-
-        /* Style pour le bouton de téléchargement */
-        #download-button {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 200px; /* Agrandit le bouton */
-            height: auto;
-            display: none;
-            cursor: pointer;
-        }
-
-        #download-button:hover {
-            opacity: 0.8; /* Effet de survol */
-        }
-    </style>
+    <!-- Lien vers le fichier CSS externe -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Vidéo de fond -->
