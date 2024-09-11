@@ -3,25 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Vidéo Locale avec Style</title>
+    <title>Invitation Interactive</title>
     <style>
         /* Style pour la vidéo de fond */
         video {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw; /* Couvre toute la largeur de l'écran */
-            height: 100vh; /* Couvre toute la hauteur de l'écran */
-            object-fit: cover; /* Assure que la vidéo ne soit pas déformée */
-            z-index: -1; /* Place la vidéo en arrière-plan */
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1; /* Place la vidéo derrière les autres éléments */
+        }
+
+        /* Centrage de la carte */
+        .card-container {
+            position: relative;
+            z-index: 1; /* Place la carte au-dessus de la vidéo */
+            width: 350px;
+            height: 350px;
+            margin: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Effet d'ombre pour un look plus réaliste */
         }
     </style>
 </head>
 <body>
-    <!-- Vidéo locale avec styles -->
+    <!-- Vidéo de fond -->
     <video autoplay muted loop>
         <source src="background.mp4" type="video/mp4">
         Votre navigateur ne supporte pas les vidéos HTML5.
     </video>
+
+    <!-- Carte interactive -->
+    <div class="card-container">
+        <img src="card_recto.png" alt="Carte recto" class="card-img" id="card">
+    </div>
 </body>
 </html>
