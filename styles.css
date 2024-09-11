@@ -18,7 +18,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0; /* Couleur de secours si la vidéo ne se charge pas */
+    background-color: #fddde6; /* Couleur de secours si la vidéo ne se charge pas */
     overflow: hidden; /* Empêche les barres de défilement */
 }
 
