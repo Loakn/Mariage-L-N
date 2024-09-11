@@ -30,13 +30,31 @@
             left: 50%;
             transform: translate(-50%, -50%);
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Ombre pour un effet réaliste */
+            transition: transform 1s ease; /* Animation pour l'effet de retournement */
+            transform-style: preserve-3d;
         }
 
         /* Style pour l'image de la carte */
         .card-img {
             width: 100%;
             height: 100%;
-            backface-visibility: hidden; /* Empêche le retournement en miroir */
+            backface-visibility: hidden; /* Empêche l'effet miroir */
+        }
+
+        /* Style pour le bouton de téléchargement */
+        #download-button {
+            position: absolute;
+            top: 80%; /* Positionne le bouton en bas de la page */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px; /* Taille du bouton de téléchargement */
+            height: auto;
+            display: none; /* Caché par défaut */
+            cursor: pointer;
+        }
+
+        #download-button:hover {
+            opacity: 0.8; /* Effet de survol */
         }
     </style>
 </head>
@@ -52,6 +70,10 @@
         <img src="card_recto.png" alt="Carte recto" class="card-img" id="card">
     </div>
 
+    <!-- L'image de téléchargement -->
+    <img src="telechargement.png" id="download-button" alt="Télécharger l'invitation" style="display: none;">
+
+    <!-- Inclusion du script JS -->
     <script src="script.js"></script>
 </body>
 </html>
