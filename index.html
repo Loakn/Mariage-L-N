@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitation Interactive</title>
-    <!-- Lien vers le fichier CSS externe -->
     <link rel="stylesheet" href="styles.css">
     <!-- Inclusion de jsPDF -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
@@ -16,6 +15,14 @@
         Votre navigateur ne supporte pas les vidéos HTML5.
     </video>
 
+    <!-- Musique de fond avec un bouton de lecture -->
+    <audio id="background-music" loop>
+        <source src="musique.mp3" type="audio/mp3">
+        Votre navigateur ne supporte pas l'élément audio.
+    </audio>
+
+    <button id="play-music" style="position: fixed; top: 10px; left: 10px; z-index: 10; padding: 10px; font-size: 16px;">Jouer la musique</button>
+
     <!-- Carte interactive -->
     <div class="card-container" id="card-container">
         <img src="card_recto.png" alt="Carte recto" class="card-img" id="card">
@@ -26,5 +33,13 @@
 
     <!-- Inclusion du script JS -->
     <script src="script.js"></script>
+
+    <script>
+        // Démarrage de la musique après clic sur le bouton
+        document.getElementById('play-music').addEventListener('click', function() {
+            const backgroundMusic = document.getElementById('background-music');
+            backgroundMusic.play(); // Démarre la musique
+        });
+    </script>
 </body>
 </html>
