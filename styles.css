@@ -6,8 +6,9 @@
     width: 100vw; /* Prend toute la largeur de la fenêtre */
     height: 100vh; /* Prend toute la hauteur de la fenêtre */
     object-fit: cover; /* Couvre tout l'écran sans déformation */
-    z-index: -1; /* Place la vidéo en arrière-plan */
-    opacity: 0.7; /* Optionnel : Ajuste la transparence pour que le contenu reste bien visible */
+    z-index: -1; /* Vidéo en arrière-plan */
+    opacity: 0.7; /* Ajuste la transparence */
+    pointer-events: none; /* Empêche les interactions avec la vidéo */
 }
 
 /* Centrage général pour les cartes et autres éléments */
@@ -15,24 +16,22 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fddde6; /* Rose perle, utilisé si la vidéo ne charge pas */
-    overflow: hidden;
-    perspective: 1000px;
+    background-color: #fddde6; /* Couleur rose perle si la vidéo ne charge pas */
+    overflow: hidden; /* Empêche tout débordement */
 }
 
 /* Conteneur de la carte */
 .card-container {
     position: relative;
-    z-index: 1; /* La carte reste au-dessus de la vidéo */
-    width: auto;
-    height: auto;
-    max-width: 90vw; /* Ajuste la largeur maximale à 90% de la fenêtre */
-    max-height: 90vh; /* Ajuste la hauteur maximale à 90% de la fenêtre */
-    transform-style: preserve-3d;
-    transition: transform 1s;
+    z-index: 1; /* Assure que la carte est au-dessus de la vidéo */
+    width: 350px; /* Dimensions de la carte */
+    height: 350px;
+    transform-style: preserve-3d; /* Préserve l'effet 3D pour le retournement */
+    transition: transform 1s; /* Animation pour le retournement */
 }
 
 /* Image de téléchargement */
@@ -40,7 +39,7 @@ html, body {
     position: absolute;
     top: 50%; /* Centré verticalement */
     left: 50%; /* Centré horizontalement */
-    transform: translate(-50%, -50%); /* Correction pour parfaitement centrer l'image */
+    transform: translate(-50%, -50%); /* Correction pour centrer parfaitement l'image */
     width: 50%; /* L'image occupe 50% de la largeur de la page */
     height: auto; /* Garde les proportions de l'image */
     display: none; /* Caché par défaut */
