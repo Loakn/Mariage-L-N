@@ -18,6 +18,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #fddde6; /* Rose perle, utilisé si la vidéo ne charge pas */
     overflow: hidden;
     perspective: 1000px;
 }
@@ -40,7 +41,7 @@ html, body {
     top: 50%; /* Centré verticalement */
     left: 50%; /* Centré horizontalement */
     transform: translate(-50%, -50%); /* Correction pour parfaitement centrer l'image */
-    width: 25%; /* L'image occupe 25% de la largeur de la page */
+    width: 50%; /* L'image occupe 50% de la largeur de la page */
     height: auto; /* Garde les proportions de l'image */
     display: none; /* Caché par défaut */
     cursor: pointer;
