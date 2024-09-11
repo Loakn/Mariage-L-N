@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Vidéo Locale</title>
+    <title>Test Vidéo Locale avec Style</title>
+    <style>
+        /* Style pour la vidéo de fond */
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw; /* Couvre toute la largeur de l'écran */
+            height: 100vh; /* Couvre toute la hauteur de l'écran */
+            object-fit: cover; /* Assure que la vidéo ne soit pas déformée */
+            z-index: -1; /* Place la vidéo en arrière-plan */
+        }
+    </style>
 </head>
 <body>
-    <!-- Vidéo locale -->
-    <video autoplay muted loop width="100%" height="100%">
+    <!-- Vidéo locale avec styles -->
+    <video autoplay muted loop>
         <source src="background.mp4" type="video/mp4">
         Votre navigateur ne supporte pas les vidéos HTML5.
     </video>
