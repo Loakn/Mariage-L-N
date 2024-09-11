@@ -56,6 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
         pdf.addImage('henne.png', 'PNG', 0, 0, 380,380);
 
         // Téléchargement du PDF
-        pdf.save('invitation.pdf');
+        pdf.save('Loryane et Nathanael.pdf');
     });
 });
