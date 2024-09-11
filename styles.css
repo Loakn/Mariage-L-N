@@ -1,4 +1,16 @@
-/* Centrage général */
+/* Styles pour la vidéo de fond */
+#background-video {
+    position: fixed; /* Fixé pour rester en arrière-plan même en cas de défilement */
+    top: 0;
+    left: 0;
+    min-width: 100%; /* La vidéo couvre toute la largeur de l'écran */
+    min-height: 100%; /* La vidéo couvre toute la hauteur de l'écran */
+    z-index: -1; /* Place la vidéo derrière tous les autres éléments */
+    object-fit: cover; /* L'image vidéo couvre tout l'écran sans déformation */
+    opacity: 0.7; /* Optionnel : Ajuste la transparence de la vidéo si tu veux un effet plus doux */
+}
+
+/* Centrage général pour les cartes et autres éléments */
 html, body {
     margin: 0;
     padding: 0;
@@ -6,9 +18,9 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f8d7da;
-    perspective: 1000px; /* Perspective pour l'effet 3D */
+    background-color: #f8d7da; /* Ceci devient un backup si la vidéo ne charge pas */
     overflow: hidden;
+    perspective: 1000px;
 }
 
 /* Conteneur pour le retournement 3D */
