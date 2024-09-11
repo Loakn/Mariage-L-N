@@ -16,41 +16,48 @@
             z-index: -1; /* Place la vidéo derrière les autres éléments */
         }
 
+        /* Conteneur général pour centrer la carte */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fddde6; /* Si jamais la vidéo ne charge pas */
+        }
+
         /* Conteneur pour la carte */
         .card-container {
             position: relative;
-            z-index: 1; /* Place la carte au-dessus de la vidéo */
+            z-index: 1;
             width: 350px; /* Taille de la carte */
             height: auto;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: auto;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            transition: transform 1s ease; /* Animation pour l'effet de retournement */
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+            transition: transform 1s ease;
             transform-style: preserve-3d;
-            max-width: 90vw; /* La carte ne dépasse pas 90% de la largeur de la fenêtre */
-            max-height: 90vh; /* La carte ne dépasse pas 90% de la hauteur de la fenêtre */
+            max-width: 90vw;
+            max-height: 90vh;
         }
 
         /* Style pour l'image de la carte */
         .card-img {
             width: 100%;
             height: auto;
-            backface-visibility: hidden; /* Empêche l'effet miroir */
+            backface-visibility: hidden;
         }
 
         /* Style pour le bouton de téléchargement */
         #download-button {
-            position: fixed; /* Fixe le bouton pour qu'il soit toujours centré */
+            position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 150px; /* Taille du bouton de téléchargement */
+            width: 200px; /* Agrandit le bouton */
             height: auto;
-            display: none; /* Caché par défaut */
+            display: none;
             cursor: pointer;
         }
 
