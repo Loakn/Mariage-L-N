@@ -4,35 +4,38 @@ document.addEventListener('DOMContentLoaded', function() {
     const downloadButton = document.getElementById('download-button');
     let step = 1;
 
+    // Premier clic : retourne la carte (recto -> verso)
     cardContainer.addEventListener('click', function() {
         if (step === 1) {
             cardContainer.style.transform = 'rotateY(180deg)'; // Effet de retournement 3D
             setTimeout(() => {
-                card.src = 'card_verso.png'; // Afficher le verso
+                card.src = 'card_verso.png'; // Change l'image pour afficher le verso
                 cardContainer.style.transform = 'rotateY(0deg)'; // Retourner la carte
             }, 500); // Délai pour l'animation
             step++;
         } else if (step === 2) {
-            cardContainer.style.transform = 'rotateY(180deg)'; // Retournement pour la carte Henné
+            // Deuxième clic : afficher la carte Henné
+            cardContainer.style.transform = 'rotateY(180deg)'; // Retourner la carte
             setTimeout(() => {
                 card.src = 'henne.png'; // Afficher la carte Henné
                 cardContainer.style.transform = 'rotateY(0deg)'; // Retourner à l'avant
             }, 500);
             step++;
         } else if (step === 3) {
+            // Troisième clic : afficher le bouton de téléchargement
             downloadButton.style.display = 'block'; // Affiche le bouton de téléchargement
             step++;
         }
     });
 
-    // Fonction pour télécharger le PDF
+    // Fonction pour générer et télécharger le PDF avec les images
     downloadButton.addEventListener('click', function() {
         const { jsPDF } = window.jspdf;
 
         const pdf = new jsPDF({
-            orientation: 'portrait',
-            unit: 'px',
-            format: [1772, 1772]
+            orientation: 'portrait', // Orientation du PDF
+            unit: 'px', // Unité en pixels
+            format: [1772, 1772] // Dimensions des images conservées
         });
 
         // Ajouter la première image (recto)
@@ -42,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         pdf.addPage();
         pdf.addImage('card_verso.png', 'PNG', 0, 0, 1772, 1772);
 
-        // Ajouter la carte henné
+        // Ajouter la carte Henné
         pdf.addPage();
         pdf.addImage('henne.png', 'PNG', 0, 0, 1772, 1772);
 
