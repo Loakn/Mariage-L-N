@@ -7,10 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Premier clic : retourne la carte (recto -> verso)
     cardContainer.addEventListener('click', function() {
         if (step === 1) {
-            // Démarrer la musique après le premier clic
-            backgroundMusic.play();
-            
-            cardContainer.style.transform = 'rotateY(180deg)'; // Effet de retournement 3D
+          cardContainer.style.transform = 'rotateY(180deg)'; // Effet de retournement 3D
             setTimeout(() => {
                 card.src = 'card_verso.png'; // Change l'image pour afficher le verso
                 cardContainer.style.transform = 'rotateY(0deg)'; // Retourner la carte
