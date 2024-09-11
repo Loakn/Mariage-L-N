@@ -16,12 +16,12 @@
             z-index: -1; /* Place la vidéo derrière les autres éléments */
         }
 
-        /* Centrage et taille de la carte */
+        /* Conteneur pour la carte */
         .card-container {
             position: relative;
             z-index: 1; /* Place la carte au-dessus de la vidéo */
             width: 350px; /* Taille de la carte */
-            height: 500px; /* Ajuste la hauteur de la carte */
+            height: auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -29,22 +29,23 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Ombre pour un effet réaliste */
             transition: transform 1s ease; /* Animation pour l'effet de retournement */
             transform-style: preserve-3d;
+            max-width: 90vw; /* La carte ne dépasse pas 90% de la largeur de la fenêtre */
+            max-height: 90vh; /* La carte ne dépasse pas 90% de la hauteur de la fenêtre */
         }
 
         /* Style pour l'image de la carte */
         .card-img {
             width: 100%;
-            height: 100%;
+            height: auto;
             backface-visibility: hidden; /* Empêche l'effet miroir */
         }
 
         /* Style pour le bouton de téléchargement */
         #download-button {
-            position: absolute;
-            top: 80%; /* Positionne le bouton en bas de la page */
+            position: fixed; /* Fixe le bouton pour qu'il soit toujours centré */
+            top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 150px; /* Taille du bouton de téléchargement */
@@ -66,12 +67,12 @@
     </video>
 
     <!-- Carte interactive -->
-    <div class="card-container">
+    <div class="card-container" id="card-container">
         <img src="card_recto.png" alt="Carte recto" class="card-img" id="card">
     </div>
 
     <!-- L'image de téléchargement -->
-    <img src="telechargement.png" id="download-button" alt="Télécharger l'invitation" style="display: none;">
+    <img src="telechargement.png" id="download-button" alt="Télécharger l'invitation">
 
     <!-- Inclusion du script JS -->
     <script src="script.js"></script>
