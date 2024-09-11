@@ -21,7 +21,8 @@
         Votre navigateur ne supporte pas l'élément audio.
     </audio>
 
-    <button id="play-music" style="position: fixed; top: 10px; left: 10px; z-index: 10; padding: 10px; font-size: 16px;">Jouer la musique</button>
+    <!-- Bouton lecture musique en image -->
+    <img src="play.png" id="play-music" alt="Jouer la musique" style="position: fixed; top: 10px; left: 10px; z-index: 10; width: 50px; height: 50px; cursor: pointer;">
 
     <!-- Carte interactive -->
     <div class="card-container" id="card-container">
@@ -33,13 +34,5 @@
 
     <!-- Inclusion du script JS -->
     <script src="script.js"></script>
-
-    <script>
-        // Démarrage de la musique après clic sur le bouton
-        document.getElementById('play-music').addEventListener('click', function() {
-            const backgroundMusic = document.getElementById('background-music');
-            backgroundMusic.play(); // Démarre la musique
-        });
-    </script>
 </body>
 </html>
