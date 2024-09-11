@@ -4,23 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invitation Interactive</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- Pour le PDF -->
+    <link rel="stylesheet" href="styles.css"> <!-- Lien vers le fichier CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- Pour générer le PDF -->
 </head>
 <body>
+    <!-- Vidéo de fond -->
+    <video autoplay muted loop id="background-video">
+        <source src="background.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas les vidéos HTML5.
+    </video>
+
+    <!-- Carte interactive -->
     <div class="card-container">
         <img src="card_recto.png" alt="Carte recto" class="card-img" id="card">
     </div>
 
-    <!-- Remplacer le bouton par l'image de téléchargement -->
-    <img src="telechargement.png" id="download-button" alt="Télécharger l'invitation">
+    <!-- L'image de téléchargement -->
+    <img src="telechargement.png" id="download-button" alt="Télécharger l'invitation" style="display: none;">
 
-    <!-- Intégration de la musique ici -->
-    <audio id="background-music" autoplay loop>
-        <source src="musique.mp3" type="audio/mpeg">
-        Votre navigateur ne supporte pas la lecture audio.
-    </audio>
-
+    <!-- Inclusion du script JS -->
     <script src="script.js"></script>
 </body>
 </html>
