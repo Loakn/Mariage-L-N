@@ -35,19 +35,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const pdf = new jsPDF({
             orientation: 'portrait', // Orientation du PDF
             unit: 'px', // Unité en pixels
-            format: [1772, 1772] // Dimensions des images conservées
+            format: [380, 380] // Dimensions des images conservées
         });
 
         // Ajouter la première image (recto)
-        pdf.addImage('card_recto.png', 'PNG', 0, 0, 1772, 1772);
+        pdf.addImage('card_recto.png', 'PNG', 0, 0, 380, 380);
 
         // Ajouter la deuxième image (verso)
         pdf.addPage();
-        pdf.addImage('card_verso.png', 'PNG', 0, 0, 1772, 1772);
+        pdf.addImage('card_verso.png', 'PNG', 0, 0, 380, 380);
 
         // Ajouter la carte Henné
         pdf.addPage();
-        pdf.addImage('henne.png', 'PNG', 0, 0, 1772, 1772);
+        pdf.addImage('henne.png', 'PNG', 0, 0, 380, 380);
 
         // Téléchargement du PDF
         pdf.save('invitation.pdf');
