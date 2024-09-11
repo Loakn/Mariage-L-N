@@ -15,16 +15,16 @@ document.addEventListener('DOMContentLoaded', function() {
             step++;
         } else if (step === 2) {
             // Deuxième clic : afficher la carte Henné
-            cardContainer.style.transform = 'rotateY(180deg)'; // Retourner la carte
+            cardContainer.style.transform = 'rotateY(180deg)';
             setTimeout(() => {
                 card.src = 'henne.png'; // Afficher la carte Henné
-                cardContainer.style.transform = 'rotateY(0deg)'; // Retourner à l'avant
+                cardContainer.style.transform = 'rotateY(0deg)';
             }, 500);
             step++;
         } else if (step === 3) {
-            // Troisième clic : afficher le bouton de téléchargement
+            // Troisième clic : afficher le bouton de téléchargement et cacher la carte Henné
+            cardContainer.style.display = 'none'; // Cache la carte Henné
             downloadButton.style.display = 'block'; // Affiche le bouton de téléchargement
-            step++;
         }
     });
 
