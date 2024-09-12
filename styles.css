@@ -55,13 +55,13 @@ body {
 
 /* Positionnement centré et empilé, avec plus d'espacement */
 #download-button {
-    top: 40%; /* Positionné plus haut */
+    top: 35%; /* Positionné plus haut */
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #answer-button {
-    top: 60%; /* Plus d'espace entre les boutons */
+    top: 65%; /* Plus d'espace entre les boutons */
     left: 50%;
     transform: translate(-50%, -50%);
 }
