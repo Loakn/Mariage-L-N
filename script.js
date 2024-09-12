@@ -6,6 +6,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const backgroundMusic = document.getElementById('background-music');
     let step = 1;
 
+    // Fonction pour précharger les images
+    function preloadImages() {
+        const images = ['card_verso.png', 'henne.png']; // Liste des images à précharger
+        images.forEach((imageSrc) => {
+            const img = new Image();
+            img.src = imageSrc;
+        });
+    }
+
+    // Appel de la fonction pour précharger les images dès le chargement de la page
+    preloadImages();
+
     // Ajout du bouton pour démarrer la musique
     document.getElementById('play-music').addEventListener('click', function() {
         backgroundMusic.play(); // Démarre la musique après le clic
@@ -38,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Redirection vers Google Form au clic sur "Réponse"
     answerButton.addEventListener('click', function() {
-        window.location.href = 'https://forms.gle/yVvHnqd2vV1eEqwY8'; // Remplace par le lien du Google Form
+        window.location.href = 'https://docs.google.com/forms/d/TON_LIEN_FORM'; // Remplace par le lien du Google Form
     });
 
     // Fonction pour générer et télécharger le PDF avec les images
