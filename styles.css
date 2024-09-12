@@ -1,3 +1,37 @@
+/* Loader de chargement */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fddde6; /* Fond rose pale */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Toujours au-dessus */
+}
+
+/* Spinner - cercle qui tourne */
+.spinner {
+    border: 8px solid #f3f3f3; /* Couleur de l'anneau */
+    border-top: 8px solid #3498db; /* Couleur du bord actif */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+/* Animation de rotation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 /* Style pour la vidéo de fond */
 video {
     position: fixed;
@@ -45,7 +79,7 @@ body {
 /* Style pour les boutons (Télécharger et Répondre) */
 #download-button, #answer-button {
     position: fixed;
-    width: 150px; /* Réduire la taille des boutons */
+    width: 150px; /* Taille réduite des boutons */
     height: auto;
     opacity: 0.7;
     display: none; /* Caché au début */
