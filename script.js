@@ -62,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Paramètres de soumission
         const formData = new URLSearchParams();
-        formData.append('entry.XXXXXXX', participation); // Remplace XXXXXX par l'ID du champ Google Forms
-        formData.append('entry.YYYYYYY', numInvites); // Remplace YYYYYYY par l'ID du champ du nombre d'invités
+        formData.append('entry.739196', participation); // Remplace XXXXXX par l'ID du champ Google Forms
+        formData.append('entry.1756875527', numInvites); // Remplace YYYYYYY par l'ID du champ du nombre d'invités
 
         // Soumettre les réponses
         fetch(googleFormUrl, {
