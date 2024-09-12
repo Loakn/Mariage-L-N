@@ -36,6 +36,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Redirection vers Google Form au clic sur "Réponse"
+    answerButton.addEventListener('click', function() {
+        window.location.href = 'https://forms.gle/yVvHnqd2vV1eEqwY8'; // Remplace par le lien du Google Form
+    });
+
     // Fonction pour générer et télécharger le PDF avec les images
     downloadButton.addEventListener('click', function() {
         const { jsPDF } = window.jspdf; // Assurer que jsPDF est bien importé
