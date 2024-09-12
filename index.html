@@ -32,6 +32,27 @@
     <!-- L'image de téléchargement -->
     <img src="telechargement.png" id="download-button" alt="Télécharger l'invitation">
 
+    <!-- L'image de réponse -->
+    <img src="answer.png" id="answer-button" alt="Répondre à l'invitation" style="position: fixed; top: 50%; left: 60%; width: 200px; cursor: pointer;">
+
+    <!-- Formulaire de réponse (caché par défaut) -->
+    <div id="response-form" style="display: none; position: fixed; top: 40%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);">
+        <p>Participeras-tu à l'événement ?</p>
+        <label>
+            <input type="radio" name="participation" value="Oui"> Oui
+        </label>
+        <label>
+            <input type="radio" name="participation" value="Non"> Non
+        </label>
+
+        <div id="guest-number" style="display: none; margin-top: 10px;">
+            <p>Combien d'invités accompagneront ?</p>
+            <input type="number" id="num-invites" min="1" max="10">
+        </div>
+
+        <button id="submit-response">Soumettre</button>
+    </div>
+
     <!-- Inclusion du script JS -->
     <script src="script.js"></script>
 </body>
