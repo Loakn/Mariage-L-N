@@ -54,16 +54,17 @@ body {
     transition: opacity 0.3s ease; /* Transition pour la transparence */
 }
 
-/* Positionnement côte à côte */
+/* Positionnement côte à côte avec un bon espacement */
 #download-button {
-    left: 40%; /* Ajuster la position du bouton de téléchargement */
+    left: 35%; /* Ajuster la position du bouton de téléchargement */
 }
 
 #answer-button {
-    left: 55%; /* Ajuster la position du bouton de réponse */
+    left: 60%; /* Ajuster la position du bouton de réponse */
 }
 
 #download-button:hover, #answer-button:hover {
     opacity: 1; /* Opacité totale au survol */
 }
+
 
