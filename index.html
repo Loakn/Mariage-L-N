@@ -9,8 +9,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </head>
 <body>
+    <!-- Loader de chargement -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Vidéo de fond -->
-    <video autoplay muted loop playsinline>
+    <video autoplay muted loop playsinline id="background-video" style="display: none;">
         <source src="background.mp4" type="video/mp4">
         Votre navigateur ne supporte pas les vidéos HTML5.
     </video>
@@ -25,17 +30,27 @@
     <img src="play.png" id="play-music" alt="Jouer la musique" style="position: fixed; top: 10px; left: 10px; z-index: 10; width: 100px; height: 100px; cursor: pointer;">
 
     <!-- Carte interactive -->
-    <div class="card-container" id="card-container">
+    <div class="card-container" id="card-container" style="display: none;">
         <img src="card_recto.png" alt="Carte recto" class="card-img" id="card">
     </div>
 
     <!-- L'image de téléchargement (cachée au début) -->
-    <img src="telechargement.png" id="download-button" alt="Télécharger l'invitation">
+    <img src="telechargement.png" id="download-button" alt="Télécharger l'invitation" style="display: none;">
 
     <!-- L'image de réponse (cachée au début) -->
-    <img src="answer.png" id="answer-button" alt="Répondre à l'invitation">
+    <img src="answer.png" id="answer-button" alt="Répondre à l'invitation" style="display: none;">
 
     <!-- Inclusion du script JS -->
     <script src="script.js"></script>
+
+    <!-- Script pour le loader -->
+    <script>
+        window.addEventListener('load', function() {
+            // Cache le loader et affiche la page une fois le chargement terminé
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('card-container').style.display = 'block';
+            document.getElementById('background-video').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
