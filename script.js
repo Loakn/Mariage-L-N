@@ -4,19 +4,43 @@ document.addEventListener('DOMContentLoaded', function() {
     const downloadButton = document.getElementById('download-button');
     const answerButton = document.getElementById('answer-button');
     const backgroundMusic = document.getElementById('background-music');
+    const loader = document.getElementById('loader'); // Loader
+    const backgroundVideo = document.getElementById('background-video'); // Vidéo de fond
     let step = 1;
 
     // Fonction pour précharger les images
-    function preloadImages() {
-        const images = ['card_verso.png', 'henne.png']; // Liste des images à précharger
+    function preloadImages(callback) {
+        const images = ['card_verso.png', 'henne.png'];
+        let loadedImages = 0;
+
+        // Vérifier quand toutes les images sont chargées
         images.forEach((imageSrc) => {
             const img = new Image();
             img.src = imageSrc;
+
+            img.onload = function() {
+                loadedImages++;
+                if (loadedImages === images.length) {
+                    callback(); // Appeler la fonction de callback quand toutes les images sont chargées
+                }
+            };
+
+            img.onerror = function() {
+                console.error("Erreur lors du chargement de l'image : " + imageSrc);
+                loadedImages++;
+                if (loadedImages === images.length) {
+                    callback(); // Même en cas d'erreur, continuer pour ne pas bloquer
+                }
+            };
         });
     }
 
-    // Appel de la fonction pour précharger les images dès le chargement de la page
-    preloadImages();
+    // Quand les images sont préchargées, cacher le loader et afficher la page
+    preloadImages(function() {
+        loader.style.display = 'none'; // Cacher le loader
+        cardContainer.style.display = 'block'; // Afficher la carte
+        backgroundVideo.style.display = 'block'; // Afficher la vidéo de fond
+    });
 
     // Ajout du bouton pour démarrer la musique
     document.getElementById('play-music').addEventListener('click', function() {
@@ -60,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const pdf = new jsPDF({
             orientation: 'portrait', // Orientation du PDF
             unit: 'px', // Unité en pixels
-            format: [380,380] // Dimensions des images conservées
+            format: [380, 380] // Dimensions des images conservées
         });
 
         // Ajouter la première image (recto)
