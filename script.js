@@ -35,4 +35,29 @@ document.addEventListener('DOMContentLoaded', function() {
             answerButton.style.display = 'block'; // Affiche le bouton de réponse
         }
     });
+
+    // Fonction pour générer et télécharger le PDF avec les images
+    downloadButton.addEventListener('click', function() {
+        const { jsPDF } = window.jspdf; // Assurer que jsPDF est bien importé
+
+        const pdf = new jsPDF({
+            orientation: 'portrait', // Orientation du PDF
+            unit: 'px', // Unité en pixels
+            format: [380,380] // Dimensions des images conservées
+        });
+
+        // Ajouter la première image (recto)
+        pdf.addImage('card_recto.png', 'PNG', 0, 0, 380, 380);
+
+        // Ajouter la deuxième image (verso)
+        pdf.addPage();
+        pdf.addImage('card_verso.png', 'PNG', 0, 0, 380, 380);
+
+        // Ajouter la carte Henné
+        pdf.addPage();
+        pdf.addImage('henne.png', 'PNG', 0, 0, 380, 380);
+
+        // Téléchargement du PDF
+        pdf.save('Loryane et Nathanael.pdf');
+    });
 });
