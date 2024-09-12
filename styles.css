@@ -14,8 +14,8 @@
 
 /* Spinner - cercle qui tourne */
 .spinner {
-    border: 8px solid #f3f3f3; /* Couleur de l'anneau */
-    border-top: 8px solid #3498db; /* Couleur du bord actif */
+    border: 8px solid #ffffff; /* Couleur de l'anneau : blanc */
+    border-top: 8px solid #000000; /* Couleur du bord actif : noir */
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -31,7 +31,6 @@
         transform: rotate(360deg);
     }
 }
-
 /* Style pour la vidéo de fond */
 video {
     position: fixed;
