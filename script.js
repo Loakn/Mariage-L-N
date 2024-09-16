@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Redirection vers Google Form au clic sur "Réponse"
     answerButton.addEventListener('click', function() {
-        window.location.href = 'https://forms.gle/BDvKmsWPYV6tBmCt5'; // Remplace par le lien du Google Form
+        window.location.href = 'https://forms.gle/XDoqUYNLDYwuiema9'; // Remplace par le lien du Google Form
     });
 
     // Fonction pour générer et télécharger le PDF avec les images
