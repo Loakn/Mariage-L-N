@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Fonction pour précharger les images
     function preloadImages(callback) {
-        const images = ['card_verso.png', 'henne.png'];
+        const images = ['card_verso.pdf', 'henne.pdf'];
         let loadedImages = 0;
 
         // Vérifier quand toutes les images sont chargées
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (step === 1) {
             cardContainer.style.transform = 'rotateY(180deg)'; // Effet de retournement 3D
             setTimeout(() => {
-                card.src = 'card_verso.png'; // Change l'image pour afficher le verso
+                card.src = 'card_verso.pdf'; // Change l'image pour afficher le verso
                 cardContainer.style.transform = 'rotateY(0deg)'; // Retourner la carte
             }, 500); // Délai pour l'animation
             step++;
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Deuxième clic : afficher la carte Henné
             cardContainer.style.transform = 'rotateY(180deg)';
             setTimeout(() => {
-                card.src = 'henne.png'; // Afficher la carte Henné
+                card.src = 'henne.pdf'; // Afficher la carte Henné
                 cardContainer.style.transform = 'rotateY(0deg)';
             }, 500);
             step++;
@@ -98,15 +98,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Ajouter la première image (recto)
-        pdf.addImage('card_recto.png', 'PNG', 0, 0, 380, 380);
+        pdf.addImage('card_recto.pdf', 'PDF', 0, 0, 380, 380);
 
         // Ajouter la deuxième image (verso)
         pdf.addPage();
-        pdf.addImage('card_verso.png', 'PNG', 0, 0, 380, 380);
+        pdf.addImage('card_verso.pdf', 'PDF', 0, 0, 380, 380);
 
         // Ajouter la carte Henné
         pdf.addPage();
-        pdf.addImage('henne.png', 'PNG', 0, 0, 380, 380);
+        pdf.addImage('henne.pdf', 'PDF', 0, 0, 380, 380);
 
         // Téléchargement du PDF
         pdf.save('Loryane et Nathanael.pdf');
