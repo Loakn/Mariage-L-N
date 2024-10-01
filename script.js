@@ -35,11 +35,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Quand les images sont préchargées, cacher le loader et afficher la page
+    // Quand les images sont préchargées, cacher le loader et essayer de jouer la vidéo de fond
     preloadImages(function() {
         loader.style.display = 'none'; // Cacher le loader
         cardContainer.style.display = 'block'; // Afficher la carte
         backgroundVideo.style.display = 'block'; // Afficher la vidéo de fond
+
+        // S'assurer que la vidéo est mutée et essayer de la jouer
+        backgroundVideo.muted = true;  // Forcer la vidéo à être muette pour les politiques d'autoplay
+        backgroundVideo.play().catch(function(error) {
+            console.log("Autoplay échoué : interaction nécessaire", error);
+            // Si autoplay échoue, demander à l'utilisateur d'interagir
+            document.addEventListener('click', function() {
+                backgroundVideo.play();
+            }, { once: true });
+        });
     });
 
     // Ajout du bouton pour démarrer la musique
